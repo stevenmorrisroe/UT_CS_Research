@@ -1,6 +1,6 @@
-from src.nodes import generate_next_idea
-from src.config import Config
-from src.states import InputState, Assumptions
+from plan_sim.nodes import generate_next_idea
+from plan_sim.config import Config
+from plan_sim.states import InputState, Assumptions
 
 def test_generate_next_idea():
     try:

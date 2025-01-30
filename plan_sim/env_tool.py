@@ -8,7 +8,7 @@ def load_api_key() -> str:
     Raises ValueError if API key is not found.
     """
     # Try to load from .env file using absolute path from project root
-    project_root = Path(__file__).parent.parent
+    project_root = Path(__file__).parent
     env_path = project_root / '.env'
     load_dotenv(env_path)
     

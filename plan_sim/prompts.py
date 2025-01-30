@@ -1,3 +1,18 @@
+DECIDE_RESULT = """Given your years of experiecne in {topic} , decide if the next step propposed will will be effective in moving from the current state to the goal state.
+
+We currently know the following:
+{ground_truth}
+{vulnerabilities}
+
+The next step propposed is:
+{next_step}
+
+
+
+
+"""
+
+
 # Goal state check prompt
 GOAL_STATE_CHECK = """Given the current state and goal state, determine if the current state matches the goal state requirements.
 Current state: {current_state}
