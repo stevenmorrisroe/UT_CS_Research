@@ -1,0 +1,13 @@
+{
+    "dockerfile_lines": [
+        "VOLUME /app/qdrant_db"
+    ],
+    "docker_compose_file": "./docker-compose.extend.yml",
+    "graphs": {
+      "plan_sim": "./main.py:graph"
+    },
+    "python_version": "3.11",
+    "dependencies": [
+      "."
+    ]
+  }

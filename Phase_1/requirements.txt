@@ -33,3 +33,6 @@ tqdm==4.67.1
 typing_extensions==4.12.2
 urllib3==2.3.0
 zstandard==0.23.0
+qdrant-client==1.13.3
+langchain-qdrant==0.2.0
+langgraph==0.3.25 

@@ -8,7 +8,7 @@ from typing_extensions import Annotated
 class Config:
     """The configurable fields for the application."""
     run_id: Optional[str] = None
-    topic: str = "Hacking"
+    topic: str = "Plumbing"
     subtopic: Optional[str] = None
     thinking_model: str = "gpt-4o-mini"
     sm_model: Optional[str] = None
@@ -30,4 +30,4 @@ class Config:
         return cls(**{k: v for k, v in values.items() if v})
 
 # Create a default config instance
-config = Config()
+# config = Config() # Removed - unused

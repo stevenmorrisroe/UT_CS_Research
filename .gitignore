@@ -52,4 +52,7 @@ htmlcov/
 *.zip
 
 # Logs
-*.log 
+*.log
+
+# Local Databases
+qdrant_db/ 

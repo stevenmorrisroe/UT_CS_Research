@@ -1,0 +1,8 @@
+services:
+  langgraph-api:
+    volumes:
+      - qdrant_data:/app/qdrant_db
+
+volumes:
+  qdrant_data:
+    driver: local 
