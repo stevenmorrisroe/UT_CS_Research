@@ -14,7 +14,8 @@ from pathlib import Path
 # Determine Project Root and Persona Directory Path
 PROJECT_ROOT = Path(__file__).parents[1]  # Go up two levels to reach project root
 #PERSONA_DIR = PROJECT_ROOT / "data" / "personas"  # Old path
-PERSONA_DIR = PROJECT_ROOT / ".." / "persona_clustering" / "output" / "nmf_k20" # New path
+#PERSONA_DIR = PROJECT_ROOT / ".." / "persona_clustering" / "output" / "nmf_k20" # Incorrect path from previous attempt
+PERSONA_DIR = PROJECT_ROOT / ".." / "persona_clustering" / "output_nmf_k20" # Corrected path
 
 # Placeholder content for the persona file if created
 PLACEHOLDER_PERSONA_CONTENT = """

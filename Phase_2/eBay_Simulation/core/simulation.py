@@ -34,7 +34,7 @@ from core.product_search import embed_product_description, search_product_index
 # Determine Project Root
 PROJECT_ROOT = Path(__file__).parents[1]
 # Update INDEX_DIR to point to the nmf_k20 output directory
-INDEX_DIR = PROJECT_ROOT / ".." / "persona_clustering" / "output" / "nmf_k20"
+INDEX_DIR = PROJECT_ROOT / ".." / "persona_clustering" / "output_nmf_k20"
 
 # Maximum conversation turns
 MAX_CONVERSATION_TURNS = 10  # Max turns for each agent
