@@ -1,0 +1,28 @@
+=== Topic Coherence Report ===
+
+Overall Average C_v Coherence: 0.7241
+Overall Average UMass Coherence: -0.4591
+
+UMass Coherence per Topic:
+  - Topic 0: -0.2610
+  - Topic 1: -0.3416
+  - Topic 2: -0.3626
+  - Topic 3: -0.4451
+  - Topic 4: -0.2686
+  - Topic 5: -0.6623
+  - Topic 6: -0.4965
+  - Topic 7: -0.9002
+  - Topic 8: -0.3477
+  - Topic 9: -0.4052
+  - Topic 10: -0.4166
+  - Topic 11: -0.1905
+  - Topic 12: -0.7285
+  - Topic 13: -0.7578
+  - Topic 14: -0.8873
+  - Topic 15: -0.3496
+  - Topic 16: -0.3025
+  - Topic 17: -0.2398
+  - Topic 18: -0.3847
+  - Topic 19: -0.4337
+
+(Calculated using top 10 words per topic)

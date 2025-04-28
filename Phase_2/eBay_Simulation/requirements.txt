@@ -1,0 +1,24 @@
+# Core dependencies
+langchain>=0.1.0
+langchain-core
+langchain-google-genai
+langgraph
+psycopg2-binary>=2.9.6
+python-dotenv>=1.0.0
+requests>=2.31.0
+pydantic>=2.0.0
+tenacity>=8.2.0
+faiss-cpu>=1.7.4 # Added for vector search (use faiss-gpu if you have CUDA)
+# ebay-finding-api # Assuming this is used by tools/ebay_api.py, might need verification -> Package not found
+pandas>=1.5.0 # Added for reading CSV indices
+scikit-learn>=1.0.0 # Added for cosine similarity calculation
+
+# Testing
+pytest>=7.3.1
+pytest-cov>=4.1.0
+
+# Development tools
+black>=23.3.0
+flake8>=6.0.0
+isort>=5.12.0
+mypy>=1.3.0

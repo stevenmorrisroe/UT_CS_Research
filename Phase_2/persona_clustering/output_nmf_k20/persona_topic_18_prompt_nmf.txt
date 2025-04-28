@@ -1,0 +1,23 @@
+Create a descriptive persona based on the following data for Topic 18.
+
+**Topic Core:**
+- Primary Keywords: earrings, party, necklace, jewelry, hair
+- Secondary Keywords: gifts, wig, gift, birthday, girls, category_jewelry, piercing, halloween, lights, christmas, wedding, category_necklace, ring, category_earring, cosplay, wigs, bracelet, rings, hoop, costume
+- Inferred Goal: shopping online for various goods
+
+**Value Sensitivity:**
+- Purchases items around the **average value point**, suggesting balanced value consideration.
+
+**Behavioral Signals:**
+- Shopping Style: Is a **Highly Engaged Shopper**, making over 10 purchases on average, demonstrating very high frequency and likely broad interaction. 
+- Item Loyalty: Demonstrate **high loyalty or need for specific items**, with significant repeat purchasing (over 40% buy the same item again).
+
+**Demographics (if available):** 
+- Typically falls within the **18 - 24 years** age group.
+- Predominantly identifies as **Female** (73%).
+- Commonly reports an income in the **$25,000 - $49,999** range.
+- Most frequently reports education level as **High school diploma or GED**.
+- Commonly located in **Texas**, **Pennsylvania** and **Florida**.
+
+**Instructions:**
+Synthesize the information above into a concise, narrative persona description. Give the persona a plausible name. Describe their likely motivations, shopping habits, lifestyle, and attitude based *only* on the provided data. Avoid making assumptions beyond the data. Focus on what the data tells us about their online purchasing behavior and related characteristics.

@@ -1,0 +1,23 @@
+Create a descriptive persona based on the following data for Topic 15.
+
+**Topic Core:**
+- Primary Keywords: rolls, wipes, pods, coffee, roast
+- Secondary Keywords: scent, category_beverages, toilet, category_health_and_medical, fresh, detergent, paper, vary, laundry, regular, keurig, category_toilet_paper, packaging, category_laundry_detergent, category_cleaning_agent, category_skincare, clean, kcup, solimo, ultra
+- Inferred Goal: primarily shopping within the **beverages** and **health and medical** categories
+
+**Value Sensitivity:**
+- Purchases items around the **average value point**, suggesting balanced value consideration.
+
+**Behavioral Signals:**
+- Shopping Style: Is a **Highly Engaged Shopper**, making over 10 purchases on average, demonstrating very high frequency and likely broad interaction. 
+- Item Loyalty: Demonstrate **high loyalty or need for specific items**, with significant repeat purchasing (over 40% buy the same item again).
+
+**Demographics (if available):** 
+- Typically falls within the **25 - 34 years** age group.
+- Gender distribution includes: **Male: 52%, Female: 46%, Other: 1%, Prefer not to say: 1%**.
+- Commonly reports an income in the **$25,000 - $49,999** range.
+- Most frequently reports education level as **Bachelor's degree**.
+- Commonly located in **Florida**, **New York** and **California**.
+
+**Instructions:**
+Synthesize the information above into a concise, narrative persona description. Give the persona a plausible name. Describe their likely motivations, shopping habits, lifestyle, and attitude based *only* on the provided data. Avoid making assumptions beyond the data. Focus on what the data tells us about their online purchasing behavior and related characteristics.

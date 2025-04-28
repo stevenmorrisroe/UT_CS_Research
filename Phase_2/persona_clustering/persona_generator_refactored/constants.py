@@ -8,14 +8,15 @@ _constants_dir = os.path.dirname(__file__)
 # Get the parent directory (persona_generator_refactored)
 _script_dir = os.path.dirname(_constants_dir)
 # Get the base directory (persona_clustering)
-_base_dir = os.path.dirname(_script_dir)
+# _base_dir = os.path.dirname(_script_dir) # Old base directory (Phase_2)
 
-# Default data file path (relative to the base directory)
-DEFAULT_DATA_FILE = os.path.join(_base_dir, "data", "amazon-purchases.csv")
-# Default output directory (relative to the base directory)
-DEFAULT_OUTPUT_DIR = os.path.join(_base_dir, "output_nmf_k20")
-# Default survey file path (relative to the base directory)
-DEFAULT_SURVEY_FILE = os.path.join(_base_dir, "data", "survey.csv")
+# --- File Paths (Modified to be relative to _script_dir, which is persona_clustering) ---
+# Default data file path (relative to the script's parent directory)
+DEFAULT_DATA_FILE = os.path.join(_script_dir, "data", "amazon-purchases.csv")
+# Default output directory (relative to the script's parent directory)
+DEFAULT_OUTPUT_DIR = os.path.join(_script_dir, "output_nmf_k20")
+# Default survey file path (relative to the script's parent directory)
+DEFAULT_SURVEY_FILE = os.path.join(_script_dir, "data", "survey.csv")
 
 # --- Model Parameters ---
 N_TOPICS = 20 # Number of personas/topics

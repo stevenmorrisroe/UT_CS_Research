@@ -82,6 +82,13 @@ def load_and_preprocess_data(filepath):
     df = df[df['Clean_Title'].str.len() >= MIN_TITLE_LENGTH]
     logger.info(f"Rows after filtering by Clean_Title length >= {MIN_TITLE_LENGTH}: {len(df)} (dropped {initial_rows_count - len(df)}) ")
 
+    # --- NEW Filtering Step: Exclude Gift Cards/Reloads by Title --- #
+    initial_rows_count = len(df)
+    # Correct pattern to match cleaned title (spaces, not underscores)
+    gift_card_pattern = r'gift card|reload' # Use raw string for regex clarity
+    df = df[~df['Clean_Title'].str.contains(gift_card_pattern, case=False, na=False, regex=True)]
+    logger.info(f"Rows after filtering gift cards/reloads by title: {len(df)} (dropped {initial_rows_count - len(df)}) ")
+
     # --- Standardize Categories --- #
     logger.info("Standardizing categories...")
     df['Category_Token'] = df['Category'].apply(standardize_category)

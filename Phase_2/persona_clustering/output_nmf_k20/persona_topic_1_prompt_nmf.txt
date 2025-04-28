@@ -1,0 +1,23 @@
+Create a descriptive persona based on the following data for Topic 1.
+
+**Topic Core:**
+- Primary Keywords: category_snacks, snack, snacks, chocolate, bars
+- Secondary Keywords: sugar, gluten_free, mix, candy, flavored, fruit, category_sugar_candy, category_drink_flavored, category_nut_and_seed, category_grocery_and_gourmet_food, keto, flavor, cookies, zero, protein, category_cookie, peanut, category_water, chips, butter
+- Inferred Goal: primarily shopping within the **snacks** category
+
+**Value Sensitivity:**
+- Purchases items around the **average value point**, suggesting balanced value consideration.
+
+**Behavioral Signals:**
+- Shopping Style: Is a **Highly Engaged Shopper**, making over 10 purchases on average, demonstrating very high frequency and likely broad interaction. 
+- Item Loyalty: Demonstrate **high loyalty or need for specific items**, with significant repeat purchasing (over 40% buy the same item again).
+
+**Demographics (if available):** 
+- Typically falls within the **35 - 44 years** age group.
+- Gender distribution includes: **Male: 49%, Female: 48%, Other: 2%, Prefer not to say: 1%**.
+- Commonly reports an income in the **$25,000 - $49,999** range.
+- Most frequently reports education level as **High school diploma or GED**.
+- Commonly located in **California**, **Pennsylvania** and **Michigan**.
+
+**Instructions:**
+Synthesize the information above into a concise, narrative persona description. Give the persona a plausible name. Describe their likely motivations, shopping habits, lifestyle, and attitude based *only* on the provided data. Avoid making assumptions beyond the data. Focus on what the data tells us about their online purchasing behavior and related characteristics.

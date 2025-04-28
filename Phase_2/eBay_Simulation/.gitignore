@@ -54,9 +54,8 @@ htmlcov/
 # Logs
 *.log
 
-# Local Databases
-qdrant_db/
+# Large data and generated files
+personas/output_nmf_k20_cleaned_final/
 
-# Project Specific
-/Phase_2/eBay_Simulation/tempvenv/
-.cursorignore 
+# Cursor IDE files
+.cursor/ 
