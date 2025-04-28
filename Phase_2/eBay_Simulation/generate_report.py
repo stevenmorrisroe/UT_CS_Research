@@ -128,9 +128,26 @@ def generate_markdown_report(report_data: Dict[str, Any]) -> str:
     print("--- Generating Markdown Report --- ")
     lines = ["# Sales Simulation Report", f"Report generated on: {datetime.now().isoformat()}", ""]
 
-    # Overall Metrics (will be calculated across all personas eventually)
+    # Overall Metrics
     lines.append("## Overall Metrics")
-    lines.append(f"- Overall Conversion Rate: {report_data.get('overall_conversion_rate', 'N/A'):.2%}")
+    lines.append(f"- Total Runs Conducted: {report_data.get('total_runs_overall', 0)}")
+    lines.append(f"- Total Successful Sales: {report_data.get('total_sales_overall', 0)}")
+    lines.append(f"- Overall Conversion Rate: {report_data.get('overall_conversion_rate', 0.0):.2%}")
+
+    # Display Overall AOV
+    overall_aov = report_data.get('overall_aov', 0.0)
+    if report_data.get('total_sales_overall', 0) > 0 and overall_aov > 0.0:
+         lines.append(f"- Overall Average Order Value (AOV): ${overall_aov:.2f}")
+    else:
+         lines.append("- Overall Average Order Value (AOV): N/A")
+
+    # Display Overall Average Rank
+    overall_avg_rank = report_data.get('overall_avg_rank', 0.0)
+    if report_data.get('total_sales_overall', 0) > 0 and overall_avg_rank > 0.0:
+         lines.append(f"- Overall Average Sold Item Rank Score: {overall_avg_rank:.4f}")
+    else:
+         lines.append("- Overall Average Sold Item Rank Score: N/A")
+    
     lines.append("")
 
     # Per-Persona Results
@@ -232,6 +249,8 @@ def main():
     all_results = {}
     total_runs_overall = 0
     total_sales_overall = 0
+    grand_total_value = 0.0 # Accumulator for overall AOV
+    grand_total_rank = 0.0  # Accumulator for overall avg rank
 
     for persona_id in personas_to_process:
         print(f"\n=== Processing Persona: {persona_id} ===")
@@ -298,9 +317,22 @@ def main():
 
         all_results[persona_id] = persona_results
 
+        # Accumulate totals for overall metrics
+        grand_total_value += persona_results["total_value"]
+        grand_total_rank += persona_results["total_rank"]
+
+    # --- Calculate Overall Metrics ---
+    overall_conversion_rate = (total_sales_overall / total_runs_overall) if total_runs_overall > 0 else 0.0
+    overall_aov = (grand_total_value / total_sales_overall) if total_sales_overall > 0 else 0.0
+    overall_avg_rank = (grand_total_rank / total_sales_overall) if total_sales_overall > 0 else 0.0
+
     # --- Report Generation ---
     final_report_data = {
-        "overall_conversion_rate": (total_sales_overall / total_runs_overall) if total_runs_overall > 0 else 0.0,
+        "total_runs_overall": total_runs_overall,
+        "total_sales_overall": total_sales_overall,
+        "overall_conversion_rate": overall_conversion_rate,
+        "overall_aov": overall_aov,
+        "overall_avg_rank": overall_avg_rank,
         "personas": all_results
     }
 
