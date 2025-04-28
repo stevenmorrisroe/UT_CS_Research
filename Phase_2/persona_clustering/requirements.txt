@@ -1,0 +1,8 @@
+pandas
+nltk
+scikit-learn
+joblib
+numpy
+optuna
+gensim
+pytest 
