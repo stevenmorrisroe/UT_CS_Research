@@ -31,42 +31,51 @@ This repository contains code for ongoing research exploring LLM-based planning 
 
 ## Setup
 
-1.  **Clone the repository:**
+1.  **Navigate to the Phase_1 directory:**
     ```bash
-    git clone <your-repo-url>
-    cd <your-repo-directory>
+    cd Phase_1
     ```
+    *(All subsequent commands assume you are in the `Phase_1` directory)*
 
-2.  **Create and activate a virtual environment:**
+2.  **Create and activate a Python virtual environment:**
     ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    python3 -m venv venv  # Use python3 or python depending on your system
+    source venv/bin/activate  # On Windows use `venv\\Scripts\\activate`
     ```
+    *You should see `(venv)` appear at the start of your terminal prompt.*
 
 3.  **Install dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
+    *(Ensure your virtual environment is active before running pip)*
 
 4.  **Set up environment variables:**
-    *   Create a file named `.env` in the project root directory (alongside `requirements.txt`).
-    *   Add your OpenAI API key to the `.env` file:
+    *   Create a file named `.env` **directly inside the `Phase_1` directory**.
+    *   Add your OpenAI API key to the `.env` file like this:
         ```dotenv
         OPENAI_API_KEY='your_openai_api_key_here'
         ```
+    *   Replace `'your_openai_api_key_here'` with your actual key.
 
 ## Running the Simulation / Tests
 
-The primary way to run the simulation is through the provided tests, which execute predefined scenarios.
+The primary way to run the simulation is through the provided pytest tests, which execute predefined scenarios.
 
-1.  **Ensure your virtual environment is active.**
-2.  **Run pytest from the project root directory:**
+1.  **Ensure your virtual environment (`venv`) is active.** (See Setup Step 2)
+2.  **Run pytest from the `Phase_1` directory:**
     ```bash
     pytest
     ```
-    This will discover and run the tests in the `tests/` directory (e.g., `test_graph_interaction.py`). The output of the simulation steps for each scenario will be printed to the console.
+    *Alternatively, if the venv is not active, you can run: `venv/bin/pytest`*
+
+    This command will discover and execute the tests located in the `tests/` directory (specifically `test_graph_interaction.py`). The simulation progress for each scenario will be printed to your console.
 
     *Note: The tests make live calls to the OpenAI API and will incur costs.*
+
+    **Troubleshooting:**
+    *   **`OpenAIError: api_key... not set`**: Double-check that your `.env` file is correctly named, located in the `Phase_1` directory, and contains the `OPENAI_API_KEY` variable with your key. Ensure the virtual environment was active when installing requirements and running `pytest`.
+    *   **`Recursion limit of X reached`**: Complex scenarios (like framing a house) might exceed the default step limit. If a test fails with this error, you can increase the limit by modifying the `recursion_limit` parameter within the `RunnableConfig` object in `tests/test_graph_interaction.py` for the specific scenario.
 
 ## Key Components
 
