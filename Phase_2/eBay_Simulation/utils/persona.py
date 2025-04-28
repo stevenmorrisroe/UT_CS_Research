@@ -13,7 +13,8 @@ from pathlib import Path
 
 # Determine Project Root and Persona Directory Path
 PROJECT_ROOT = Path(__file__).parents[1]  # Go up two levels to reach project root
-PERSONA_DIR = PROJECT_ROOT / "data" / "personas"
+#PERSONA_DIR = PROJECT_ROOT / "data" / "personas"  # Old path
+PERSONA_DIR = PROJECT_ROOT / ".." / "persona_clustering" / "output" / "nmf_k20" # New path
 
 # Placeholder content for the persona file if created
 PLACEHOLDER_PERSONA_CONTENT = """
@@ -25,13 +26,14 @@ def get_available_persona_ids() -> List[str]:
     """Scans the persona data directory for persona files and returns their IDs.
     
     Assumes persona files are named following the pattern 'persona_topic_<id>_prompt_nmf.txt' 
-    within the PROJECT_ROOT/data/personas directory.
+    within the configured PERSONA_DIR.
     
     Returns:
         A list of extracted persona IDs (e.g., ['topic_0', 'topic_1']).
         Returns an empty list if the directory doesn't exist or contains no matching files.
     """
-    persona_dir = PROJECT_ROOT / "data" / "personas"
+    # Use the configured PERSONA_DIR
+    persona_dir = PERSONA_DIR 
     if not persona_dir.is_dir():
         print(f"Warning: Persona directory not found: {persona_dir}")
         return []
@@ -51,7 +53,7 @@ def get_available_persona_ids() -> List[str]:
 def load_persona_prompt(persona_id: str) -> str:
     """Loads the persona system prompt from the corresponding file.
 
-    Constructs the file path based on the PROJECT_ROOT, data directory,
+    Constructs the file path based on the configured PERSONA_DIR
     and the provided persona_id (expecting 'persona_topic_<id>_prompt_nmf.txt').
 
     Args:
@@ -64,11 +66,11 @@ def load_persona_prompt(persona_id: str) -> str:
         FileNotFoundError: If the persona file for the given ID does not exist.
         IOError: If there is an error reading the file.
     """
-    # Correctly construct the filename using the full pattern
     # Example: persona_id 'topic_0' -> filename 'persona_topic_0_prompt_nmf.txt'
     topic_number = persona_id.split('_')[1] # Extract the number part
     persona_filename = f"persona_topic_{topic_number}_prompt_nmf.txt"
-    persona_file = PROJECT_ROOT / "data" / "personas" / persona_filename
+    # Use the configured PERSONA_DIR
+    persona_file = PERSONA_DIR / persona_filename
     
     print(f"--- Attempting to load persona file: {persona_file} ---")
     try:
@@ -84,12 +86,13 @@ def load_persona_prompt(persona_id: str) -> str:
 def create_persona_placeholder():
     """Creates a placeholder persona directory and file if none exist.
     
-    Checks for the existence of PROJECT_ROOT/data/personas.
+    Checks for the existence of the configured PERSONA_DIR.
     If the directory doesn't exist, it creates it.
     If the directory exists but is empty or contains no '.txt' files,
     it creates a default 'persona_default.txt' file with placeholder content.
     """
-    persona_dir = PROJECT_ROOT / "data" / "personas"
+    # Use the configured PERSONA_DIR
+    persona_dir = PERSONA_DIR
     print(f"--- Checking persona directory: {persona_dir} ---")
     os.makedirs(persona_dir, exist_ok=True)
     
