@@ -30,7 +30,7 @@ This project performs LDA (or similar topic modeling, like NMF based on director
 
 This project requires input data to be placed in the `data/` directory. This directory is not tracked by Git. Please obtain the necessary data files and place them here before running the analysis.
 
-*(Optional: Add details about the expected data format or specific files needed here)*
+The Open E-commerce 1.0 Dataset was used
 
 ## Running the Analysis
 
