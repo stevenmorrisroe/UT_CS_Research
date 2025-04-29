@@ -40,7 +40,7 @@ To run the main analysis script:
 python persona_generator_refactored/main.py
 ```
 
-*(Note: Verify this is the correct entry point and add any required command-line arguments if necessary.)*
+
 
 ## Project Structure
 
