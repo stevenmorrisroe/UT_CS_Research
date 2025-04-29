@@ -33,11 +33,7 @@ class InputState(BaseModel):
     goal: str
     assumptions: Assumptions
           
-# Removed unused Events class
-# class Events(BaseModel):
-#     input_state: InputState
-#     step: 'NextStep'
-#     outcome: Outcome
+
 
 class Plan(BaseModel):
     plan_id: str
@@ -51,12 +47,7 @@ class Plan(BaseModel):
     cumulative_assumptions: Optional[Assumptions] = []
     final_outcome: Optional[Outcome] = None
     
-# Removed unused FinalOutcome class
-# class FinalOutcome(BaseModel):
-#     original_goal: str
-#     original_input_state: InputState
-#     final_outcome: Literal["success", "failure"]
-#     log: List[Events]
+
 
 
 

@@ -26,7 +26,7 @@ You are price-conscious but open to suggestions. You are generally polite.
 def get_available_persona_ids() -> List[str]:
     """Scans the persona data directory for persona files and returns their IDs.
     
-    Assumes persona files are named following the pattern 'persona_topic_<id>_prompt_nmf.txt' 
+    Assumes persona files are named following the pattern 'persona_topic_<id>_final_prompt.txt' 
     within the configured PERSONA_DIR.
     
     Returns:
@@ -41,8 +41,8 @@ def get_available_persona_ids() -> List[str]:
         
     persona_ids = [] # Initialize an empty list to store found IDs
     for filename in os.listdir(persona_dir):
-        # Match files like 'persona_topic_0_prompt_nmf.txt', 'persona_topic_19_prompt_nmf.txt', etc.
-        match = re.match(r"persona_topic_(\d+)_prompt_nmf\.txt", filename) 
+        # Match files like 'persona_topic_0_final_prompt.txt', 'persona_topic_19_final_prompt.txt', etc.
+        match = re.match(r"persona_topic_(\d+)_final_prompt\.txt", filename) 
         if match:
             persona_ids.append(f"topic_{match.group(1)}") # Add the found ID to the list
             
@@ -55,7 +55,7 @@ def load_persona_prompt(persona_id: str) -> str:
     """Loads the persona system prompt from the corresponding file.
 
     Constructs the file path based on the configured PERSONA_DIR
-    and the provided persona_id (expecting 'persona_topic_<id>_prompt_nmf.txt').
+    and the provided persona_id (expecting 'persona_topic_<id>_final_prompt.txt').
 
     Args:
         persona_id: The ID of the persona to load (e.g., 'topic_0').
@@ -67,9 +67,9 @@ def load_persona_prompt(persona_id: str) -> str:
         FileNotFoundError: If the persona file for the given ID does not exist.
         IOError: If there is an error reading the file.
     """
-    # Example: persona_id 'topic_0' -> filename 'persona_topic_0_prompt_nmf.txt'
+    # Example: persona_id 'topic_0' -> filename 'persona_topic_0_final_prompt.txt'
     topic_number = persona_id.split('_')[1] # Extract the number part
-    persona_filename = f"persona_topic_{topic_number}_prompt_nmf.txt"
+    persona_filename = f"persona_topic_{topic_number}_final_prompt.txt"
     # Use the configured PERSONA_DIR
     persona_file = PERSONA_DIR / persona_filename
     
@@ -102,7 +102,7 @@ def create_persona_placeholder():
     with open(readme_path, 'w') as f:
         f.write("""# Persona Data
 
-This directory should contain persona prompt files in the format `persona_topic_X_prompt_nmf.txt`.
+This directory should contain persona prompt files in the format `persona_topic_X_final_prompt.txt`.
 
 The actual persona data files are excluded from version control due to their size.
 You can obtain them by either:
@@ -117,25 +117,13 @@ Each persona file should contain a structured prompt that defines a customer per
 """
         )
     
-    # Create a sample persona file for testing
-    sample_path = persona_dir / "persona_topic_0_prompt_nmf.txt"
-    with open(sample_path, 'w') as f:
-        f.write("""System Prompt: Persona Topic 0
-
-You are a customer persona derived from real purchase data, representing a specific shopping pattern identified using NMF (k=20) on TF-IDF weighted purchase text (including product titles and categories).
-
-Your primary interests, based on keywords like **kitchen, storage, steel, stainless, stainless steel**, suggest you are **primarily shopping within the **home organization** category**. Purchases tend towards **average value items**.
-
-Overall purchasing themes include: kitchen, storage, steel, stainless, stainless steel, organizer, holder, food, category_home_organization, travel, bags, reusable, home, plastic, water, adjustable, silicone, brush, rack, office, mat, cleaning, cleaner, safe, clear.
-
-When responding in a simulated sales conversation:
-
-- Reflect interests aligned with these themes and your primary shopping goal (primarily shopping within the **home organization** category).
-
-- Ask questions or express preferences consistent with someone buying these types of items.
-
-- Your purchase decisions should logically follow from these established interests.
-
-- Do not explicitly state you are a persona; act naturally as this type of customer.
-"""
-        ) 
+    # Create a sample persona file for testing *only if it doesn't exist*
+    sample_path = persona_dir / "persona_topic_0_final_prompt.txt"
+    if not sample_path.exists():
+        print(f"--- Sample persona file {sample_path.name} not found, creating placeholder. ---")
+        with open(sample_path, 'w') as f:
+            f.write(PLACEHOLDER_PERSONA_CONTENT) # Use the placeholder content
+    else:
+        print(f"--- Sample persona file {sample_path.name} already exists, skipping placeholder creation. ---")
+        
+    print(f"--- Placeholder persona directory and sample file check complete at {persona_dir} ---") 

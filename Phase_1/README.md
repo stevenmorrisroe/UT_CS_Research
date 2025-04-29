@@ -86,4 +86,26 @@ The primary way to run the simulation is through the provided pytest tests, whic
 
 ## Research Findings
 
-See `results_comparison.md` for an analysis of example simulation runs comparing outcomes for different scenarios and highlighting the non-deterministic nature of the simulation for complex tasks. 
+See `results_comparison.md` for an analysis of example simulation runs comparing outcomes for different scenarios and highlighting the non-deterministic nature of the simulation for complex tasks.
+
+## Using LangGraph Studio (Development Server)
+
+For interactive development, debugging, and visualization, you can run the LangGraph development server and connect to the LangGraph Studio web UI:
+
+1.  **Ensure setup is complete:** Make sure you have followed all steps in the [Setup](#setup) section, including activating your virtual environment (`venv`) and installing dependencies in editable mode (`pip install -e .` from the `Phase_1` directory).
+2.  **Start the LangGraph Dev Server:** Run the following command from the `Phase_1` directory:
+    ```bash
+    langgraph dev --config plan_sim/langgraph.json
+    ```
+3.  **Access the Studio UI:** The server output will provide URLs, including one for the LangGraph Studio UI, similar to this:
+    ```
+    - 🎨 Studio UI: https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024
+    ```
+    Open this URL in your web browser (Note: Safari might have compatibility issues with local servers).
+4.  **Interact with the Graph:** The Studio UI allows you to:
+    *   Visualize the graph structure (`plan_sim`).
+    *   Invoke the graph with custom inputs.
+    *   Inspect the state transitions at each step.
+    *   Debug the execution flow.
+
+**Important:** Running the `pytest` command executes the graph *directly* within the test process. It **does not** interact with the `langgraph dev` server or the Studio UI. Use the Studio UI for interactive sessions and `pytest` for running predefined test scenarios. 

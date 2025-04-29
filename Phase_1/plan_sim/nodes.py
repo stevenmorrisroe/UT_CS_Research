@@ -8,8 +8,8 @@ from plan_sim.prompts import (GENERATE_IDEA, DECIDE_RESULT, PREDICT_OUTCOME_WORK
 from typing import Literal
 from langchain_core.runnables import RunnableConfig
 from langgraph.graph import END
-from .vector_store import is_idea_novel, store_idea
-from .llm_utils import invoke_structured_llm
+from plan_sim.vector_store import is_idea_novel, store_idea
+from plan_sim.llm_utils import invoke_structured_llm
 
 # --- Logging Setup ---
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

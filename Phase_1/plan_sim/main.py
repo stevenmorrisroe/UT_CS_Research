@@ -5,7 +5,7 @@ import operator
 from typing import Annotated, TypedDict, List, Dict, Any, Sequence
 from plan_sim.nodes import generate_next_idea, decider, generate_good_outcome, generate_bad_outcome, route_result, goal_check, route_goal_check, abandon_check, route_abandon_check, summarize_assumptions
 from plan_sim.states import Plan
-from . import config
+from plan_sim import config
 from langgraph.graph import StateGraph, START, END
 
 builder = StateGraph(Plan, config_schema=config.Config)

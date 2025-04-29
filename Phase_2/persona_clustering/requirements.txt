@@ -5,4 +5,7 @@ joblib
 numpy
 optuna
 gensim
-pytest 
+pytest
+langchain
+langchain-google-genai
+python-dotenv 

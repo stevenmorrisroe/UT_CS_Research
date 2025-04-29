@@ -56,7 +56,7 @@ def parse_args():
     parser.add_argument(
         "--wisdom-model",
         type=str,
-        default="gemini-1.5-flash-latest",
+        default="gemini-2.5-pro-exp-03-2025",
         help="Gemini model to use for generating sales wisdom.",
     )
     # Add a debug flag if needed later
